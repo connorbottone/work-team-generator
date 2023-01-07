@@ -156,6 +156,45 @@ function engineerPrompt(){
 // - push intern object to employee member array
 // - push intern id to employee id array
 // - make call to create team function
+function internPrompt(){
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "name",
+            message: "Please Enter Your interns name",
+        },
+        {
+            type: "input",
+            name: "id",
+            message: "Enter your interns ID number:",
+        },
+        {
+            type: "input",
+            name: "email",
+            message: "Please Enter interns Email Adress",
+        },
+        {
+            type: "input",
+            name: "school",
+            message: "Please Enter School name intern attends",
+        }
+    ])
+    .then((userRes) => {
+        const intern = new Intern(
+            userRes.name,
+            userRes.id,
+            userRes.email,
+            userRes.school
+        );
+        //adding the new intern to our employee array and adding the intern id into our id array
+        employeeMembers.push(intern)
+        employeeIds.push(intern.id)
+        //calling our addEmployee function again to see if the user has more employees to add.
+        addEmployee();
+
+    })
+
+}
 
 // 10.
 // build team function
