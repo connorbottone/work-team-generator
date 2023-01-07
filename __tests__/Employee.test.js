@@ -1,5 +1,4 @@
 // Import Employee class with require()
-const { hasUncaughtExceptionCaptureCallback } = require("process");
 const Employee = require("../lib/Employee")
 const employee = new Employee('nametest',"idtest","emailtest@email.com");
 
