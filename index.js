@@ -111,7 +111,44 @@ function addEmployee() {
 // - push engineer object to employee member array
 // - push engineer id to employee id array
 // - make call to create team function
+function engineerPrompt(){
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "name",
+            message: "Please Enter Your Engineers name",
+        },
+        {
+            type: "input",
+            name: "id",
+            message: "Enter your Engineers ID number:",
+        },
+        {
+            type: "input",
+            name: "email",
+            message: "Please Enter Engineers Email Adress",
+        },
+        {
+            type: "input",
+            name: "github",
+            message: "Please Enter Engineers Github Username",
+        }
+    ])
+    .then((userRes) => {
+        const engineer = new Engineer(
+            userRes.name,
+            userRes.id,
+            userRes.email,
+            userRes.github
+        );
+        //adding the new engineer to our employee array and adding the engineers id into our id array
+        employeeMembers.push(engineer)
+        employeeIds.push(engineer.id)
+        //calling our addEmployee function again to see if the user has more employees to add to the team.
+        addEmployee();
 
+    })
+}
 // 9.
 // add intern function
 // - prompt user with questions for intern name, id, email, and school
