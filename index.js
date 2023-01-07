@@ -12,7 +12,8 @@ const fs = require('fs')
 
 // 2.
 // import page-template.js from subfoler src with require and assign it to a variable to be called later to render html
-const template = require("./src/page-template")
+const template = require("./src/page-template");
+const Employee = require("./lib/Employee");
 // 3.
 // create variable to hold the path to dist subfolder using path lib resolve method
 // create variable to hold the path to team.html using path lib join method
@@ -20,20 +21,56 @@ const template = require("./src/page-template")
 // 4.
 // create an empty employee memeber array variable to store the employee members, manager, engineers, and interns
 // create an empty employee id array to store the employee ids
-
+const employeeMembers=[];
+const employeeIds = [];
 // 5.
 // print user of usage
 
-// 6.
-// make call to create manager function to start the main process
+//inital fuction to begin the program that will initiate the manager prompt
+function beginprompt(){
+    managerPrompt();
+}
+//This prompt will take in the inputs of a name,id,email and office number then return all the vlaues as a new manager
+function managerPrompt(){
+    inquirer .prompt([
+        {
+            type:"input",
+            name:"name",
+            message:"Please Enter Your Team Managers name",
+        },
+        {
+            type:"input",
+            name:"id",
+            message:"Enter your Managers ID number:",
+        },
+        {
+            type:"input",
+            name:"email",
+            message:"Please Enter Managers Email Adress",
+        },
+        {
+            type:"input",
+            name:"officeNumber",
+            message:"Enter managers Office number",
+        }
+        
+    ])
+    .then((userRes)=>{
+        const manager = new Manager(
+            userRes.name,
+            userRes.id,
+            userRes.email,
+            userRes.officeNumber
+        );
+        //adding the new manager to our employee array and adding the managers id into our id array
+        employeeMembers.push(manager)
+        employeeIds.push(manager.id)
+        //calling our next function to run to add more team members if nescassary
+        addEmployee();
 
-// 7.
-// create manager function
-// - ask the questions for name, id, email, office number for manager using inquirer
-// - in the .then callback function, create manager object by instantiating Manager class instance, passing in name, id, office number as arguments to constructor
-// - push the manager object to the employee member array
-// - push the manager id to the employee id array
-// - make call to the create team function
+    }
+    );
+}
 
 // 8.
 // create team function
