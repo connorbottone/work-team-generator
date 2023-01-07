@@ -203,3 +203,6 @@ function internPrompt(){
 // - make call to imported render function passing employee member array as argument and assign returned html to a variable
 // - make call to fs write file function passing the html file path, html variable
 
+function generateFile();{
+    
+}

@@ -1,4 +1,7 @@
 // Import Employee class with require()
+const { hasUncaughtExceptionCaptureCallback } = require("process");
+const Employee = require("../lib/Employee")
+const employee = new Employee('nametest',"idtest","emailtest@email.com");
 
 // Test instantiate Employee instance
 test("", () => {
@@ -7,51 +10,37 @@ test("", () => {
   });
   
   // Test setting name of an employee
-  test("", () => {
-    // Assign the name of an employee to a new variable
-    // Instantiate the Employee class, passing the variable of the employee name as an augument, to create an object and assign it to an new variable
-    // Expect the value of the name property of the object to be equal to the value of the variable of the employee name
+  test("Test setting name of an employee", () => {
+  expect(employee.name).toBe('nametest')
   });
   
   // Test setting id of an employee
-  test("", () => {
-    // Assign a number as an id to a new variable for the employeee id
-    // Instantiate the Employee class with an employee name of your choice and the id variable as input arguments to create an employee object and assign it to a new variable
-    // Expect the id of the employe object to be equal to the value of the id variable
+  test("Test setting id of an employee", () => {
+   expect(employee.id).toBe('idtest')
   });
   
   // Test setting email of an employee
-  test("", () => {
-    // Assign an email to a new variable
-    // Instantiate the Employee class, passing a name and an id and the email variable as input arguments, to create an employee object and assign it to a new variable
-    // Expect the email of the employee object to be equal to the value of the email variable
+  test("Test setting email of an employee", () => {
+    expect(employee.email).toBe('emailtest@email.com')
   });
   
   // Test get name method
-  test("", () => {
-    // Assign the name of an employee to a new variable
-      // Instantiate the Employee class, passing the variable of the employee name as input augument, to create an object and assign it to an new variable
-      // Expect the getName method of the object to return the name to be equal to the value of the emplyee name variable
+  test("Test get name method", () => {
+ expect(employee.getname()).toBe('nametest')
   });
   
   // Test get id method
-  test("", () => {
-    // Assign an id of an employee to a new variable
-    // Instantiate the Employee class, passing an employee name and the id variable as auguments, to create an object and assign it to an new variable
-    // Expect the getId method of the object to return the id to be equal to the value of the emplyee id variable
+  test(" Test get id method", () => {
+    expect(employee.getid()).toBe('idtest')
   });
   
   // Test get email method
-  test("", () => {
-    // Assign an email of an employee to a new variable
-    // Instantiate the Employee class, passing an employee name and an id and the email variable as auguments, to create an object and assign it to an new variable
-    // Expect the getEmail method of the object to return the email to be equal to the value of the emplyee email variable
+  test("Test get email method", () => {
+    expect(employee.getemail()).toBe('emailtest@email.com')
   });
   
   // Test get role method
-  test("", () => {
-    // Assign "Employee" to a new role variable
-    // Instantiate the Employee class, passing an employee name and an id and an email as auguments, to create an object and assign it to an new variable
-    // Expect getRole() to return the role to be equal to the value of the role variable
+  test("Test get role method", () => {
+    expect(employee.getRole()).toBe('Employee')
   });
   
