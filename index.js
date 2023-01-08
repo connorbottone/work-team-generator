@@ -206,7 +206,7 @@ function internPrompt(){
 
 function createHTML(){
     fs.writeFile("./dist/index.html",generateHtml(employeeMembers), (err)=>
-    console.log(err)
+    err ? console.log(err) :console.log("File has been generated")
     );
 
 }
