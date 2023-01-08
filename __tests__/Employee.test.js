@@ -2,11 +2,6 @@
 const Employee = require("../lib/Employee")
 const employee = new Employee('nametest',"idtest","emailtest@email.com");
 
-// Test instantiate Employee instance
-test("", () => {
-    // Instantiate the Employee class with new operator to create an object and assign it to an new variable
-    // Expect the type of the variable to be the "object" data type
-  });
   
   // Test setting name of an employee
   test("Test setting name of an employee", () => {

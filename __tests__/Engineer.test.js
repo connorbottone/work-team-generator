@@ -1,23 +1,39 @@
-// Import Engineer class with require()
-
-// Test setting github account
-test("", () => {
-    // Assign github account to a new variable
-    // Instantiate the Employee class, passing an name and an id and an email and the github variable as auguments, to create an object and assign it to an new variable
-    // Export the github of the employee object to be equal to the value of the github variable
+const Engineer = require("../lib/Engineer")
+const engineer = new engineer('nametest',"idtest","emailtest@email.com","githubtest");
+ 
+  test("Test setting name of a engineer", () => {
+  expect(engineer.name).toBe('nametest')
   });
   
-  // Test get role method
-  test("", () => {
-    // Assign "Engineer" to a new role variable
-    // Instantiate the Employee class, passing an employee name and an id and an email and a github account name as auguments, to create an object and assign it to an new variable
-    // Export getRole() to return the role to be equal to the value of the role variable
+  
+  test("Test setting id of an engineer", () => {
+   expect(engineer.id).toBe('idtest')
   });
   
-  // Test get github method
-  test("", () => {
-    // Assign github account to a new variable
-    // Instantiate the Employee class, passing an employee name and an id and an email and the github variable as auguments, to create an object and assign it to an new variable
-    // Expect getGithub() to return the github  name to be equal to the value of the github variable
+  test("Test setting email of a engineer", () => {
+    expect(engineer.email).toBe('emailtest@email.com')
+  });
+  test("Test setting the github of the erngineer",() =>{
+    expect(engineer.github).toBe("schooltest")
+  });
+  
+  test("Test get name method", () => {
+ expect(engineer.getname()).toBe('nametest')
+  });
+  
+  
+  test(" Test get id method", () => {
+    expect(engineer.getid()).toBe('idtest')
+  });
+  
+  test("Test get email method", () => {
+    expect(engineer.getemail()).toBe('emailtest@email.com')
+  });
+ test("test getrole method",() =>{
+    expect(engineer.getGithub()).toBe('githubtest')
+ });
+  
+  test("Test get role method", () => {
+    expect(engineer.getRole()).toBe('Engineer')
   });
   
