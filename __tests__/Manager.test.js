@@ -1,4 +1,4 @@
-const { default: test } = require("node:test");
+const { default: expect } = require("expect");
 const Manager = require("../lib/Manager")
 const manager = new Manager('nametest',"idtest","emailtest@email.com","test123");
 

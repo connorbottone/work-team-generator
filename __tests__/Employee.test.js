@@ -1,4 +1,4 @@
-// Import Employee class with require()
+const { default: expect } = require("expect");
 const Employee = require("../lib/Employee")
 const employee = new Employee('nametest',"idtest","emailtest@email.com");
 

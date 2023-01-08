@@ -1,3 +1,4 @@
+const { default: expect } = require("expect");
 const Intern = require("../lib/Intern")
 const intern = new Intern('nametest',"idtest","emailtest@email.com","schooltest");
  
