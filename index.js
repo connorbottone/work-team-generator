@@ -4,6 +4,7 @@ const Engineer = require("./lib/Engineer");
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require('fs')
+const generateHtml = require('./utils/gerneratehtlm')
 // 1.
 // import manager, engineer, intern files with require()
 // import inquirer with require()
@@ -204,5 +205,9 @@ function internPrompt(){
 // - make call to fs write file function passing the html file path, html variable
 
 function generateFile();{
-    
+    fs.writeFile("./dist/index.html",generateHtml(employeeMembers), (err)=>
+    console.log(err)
+    );
+
 }
+beginprompt();
