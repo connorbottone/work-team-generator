@@ -23,7 +23,7 @@ const Employee = require("./lib/Employee");
 // create an empty employee memeber array variable to store the employee members, manager, engineers, and interns
 // create an empty employee id array to store the employee ids
 const employeeMembers = [];
-const employeeIds = [];
+
 // 5.
 // print user of usage
 
@@ -65,7 +65,7 @@ function managerPrompt() {
             );
             //adding the new manager to our employee array and adding the managers id into our id array
             employeeMembers.push(manager)
-            employeeIds.push(manager.id)
+           
             //calling our next function to run to add more team members if nescassary
             addEmployee();
 
@@ -144,7 +144,7 @@ function engineerPrompt(){
         );
         //adding the new engineer to our employee array and adding the engineers id into our id array
         employeeMembers.push(engineer)
-        employeeIds.push(engineer.id)
+        
         //calling our addEmployee function again to see if the user has more employees to add to the team.
         addEmployee();
 
@@ -189,7 +189,7 @@ function internPrompt(){
         );
         //adding the new intern to our employee array and adding the intern id into our id array
         employeeMembers.push(intern)
-        employeeIds.push(intern.id)
+        
         //calling our addEmployee function again to see if the user has more employees to add.
         addEmployee();
 
