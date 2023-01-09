@@ -1,6 +1,6 @@
 const { default: expect } = require("expect");
 const Engineer = require("../lib/Engineer")
-const engineer = new engineer('nametest',"idtest","emailtest@email.com","githubtest");
+const engineer = new Engineer('nametest',"idtest","emailtest@email.com","githubtest");
  
   test("Test setting name of a engineer", () => {
   expect(engineer.name).toBe('nametest')
@@ -15,7 +15,7 @@ const engineer = new engineer('nametest',"idtest","emailtest@email.com","githubt
     expect(engineer.email).toBe('emailtest@email.com')
   });
   test("Test setting the github of the erngineer",() =>{
-    expect(engineer.github).toBe("schooltest")
+    expect(engineer.github).toBe("githubtest")
   });
   
   test("Test get name method", () => {
