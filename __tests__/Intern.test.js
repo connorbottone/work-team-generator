@@ -30,7 +30,7 @@ const intern = new Intern('nametest',"idtest","emailtest@email.com","schooltest"
   test("Test get email method", () => {
     expect(intern.getemail()).toBe('emailtest@email.com')
   });
- test("test getrole method",() =>{
+ test("test get school method",() =>{
     expect(intern.getSchool()).toBe('schooltest')
  });
   

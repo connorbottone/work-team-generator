@@ -37,7 +37,7 @@ test("", () => {
   test("Test get email method", () => {
     expect(manager.getemail()).toBe('emailtest@email.com')
   });
- test("test getrole method",() =>{
+ test("test getofficenumber method",() =>{
     expect(manager.getOfficenumber()).toBe('test123')
  });
   

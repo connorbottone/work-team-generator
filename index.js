@@ -6,7 +6,7 @@ const path = require("path");
 const fs = require('fs')
 const generateHtml = require('./utils/gerneratehtlm')
 
-const template = require("./src/page-template");
+// const template = require("./src/page-template");
 const Employee = require("./lib/Employee");
 
 const employeeMembers = [];
@@ -57,13 +57,7 @@ function managerPrompt() {
         );
 }
 
-// 8.
-// create team function
-// - prompt user with the list of choices for Engineer, Intern, or End of adding employee for the team
-// - in .then callback function check what the user choice is and make call to the corresponding functions respectively
-// - make call to add-engineer-function if the choice is engineer
-// - make call to add-intern-function if choice is intern
-// - make call to build-team function if choice is end of adding employee
+
 function addEmployee() {
     inquirer.prompt([
         {
@@ -89,7 +83,7 @@ function addEmployee() {
             }
         });
 }
-
+//function will be ran if user choses to add engineer
 function engineerPrompt(){
     inquirer.prompt([
         {
@@ -112,7 +106,7 @@ function engineerPrompt(){
             name: "github",
             message: "Please Enter Engineers Github Username",
         }
-    ])
+    ])//creating a new engineer and grabing the users input
     .then((userRes) => {
         const engineer = new Engineer(
             userRes.name,
@@ -128,13 +122,7 @@ function engineerPrompt(){
 
     })
 }
-// 9.
-// add intern function
-// - prompt user with questions for intern name, id, email, and school
-// - in .then callback create intern object by instantiating Intern class instance passing name, id, email, and school as arguments to class constructor
-// - push intern object to employee member array
-// - push intern id to employee id array
-// - make call to create team function
+//function will be ran if user selects add intern
 function internPrompt(){
     inquirer.prompt([
         {
@@ -157,7 +145,7 @@ function internPrompt(){
             name: "school",
             message: "Please Enter School name intern attends",
         }
-    ])
+    ])//taking the users input and crating a new intern with set peramiters
     .then((userRes) => {
         const intern = new Intern(
             userRes.name,
@@ -175,13 +163,8 @@ function internPrompt(){
 
 }
 
-// 10.
-// build team function
-// - check existing of dist subfolder
-// - if not exist, create the dist subfolder
-// - make call to imported render function passing employee member array as argument and assign returned html to a variable
-// - make call to fs write file function passing the html file path, html variable
 
+//function to write html new html file will be stored in dist folder as index.html
 function createHTML(){
     fs.writeFile("./dist/index.html",generateHtml(employeeMembers), (err)=>
     err ? console.log(err) :console.log("File has been generated")

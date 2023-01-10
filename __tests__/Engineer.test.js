@@ -30,7 +30,7 @@ const engineer = new Engineer('nametest',"idtest","emailtest@email.com","githubt
   test("Test get email method", () => {
     expect(engineer.getemail()).toBe('emailtest@email.com')
   });
- test("test getrole method",() =>{
+ test("test getGithub method",() =>{
     expect(engineer.getGithub()).toBe('githubtest')
  });
   
