@@ -30,11 +30,8 @@ function createHTML(employeeMembers) {
                 <p class="card-link">Email: <a href="mailto:${
                   member.email
                 }" target="_blank">${member.email}</a></p>
-                <p class="card-link">${member.getSpecial(
-                  "Manager",
-                  "Engineer",
-                  "Intern"
-                )}</p>
+                </p>
+                <p>${member.officeNumber || member.github || member.school}
                 </p>
                 </div>
                 </div>

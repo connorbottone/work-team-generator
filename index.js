@@ -5,29 +5,13 @@ const inquirer = require("inquirer");
 const path = require("path");
 const fs = require('fs')
 const generateHtml = require('./utils/gerneratehtlm')
-// 1.
-// import manager, engineer, intern files with require()
-// import inquirer with require()
-// import path with require()
-// import fs with require()
 
-// 2.
-// import page-template.js from subfoler src with require and assign it to a variable to be called later to render html
 const template = require("./src/page-template");
 const Employee = require("./lib/Employee");
-// 3.
-// create variable to hold the path to dist subfolder using path lib resolve method
-// create variable to hold the path to team.html using path lib join method
 
-// 4.
-// create an empty employee memeber array variable to store the employee members, manager, engineers, and interns
-// create an empty employee id array to store the employee ids
 const employeeMembers = [];
 
-// 5.
-// print user of usage
 
-//inital fuction to begin the program that will initiate the manager prompt
 function beginprompt() {
     managerPrompt();
 }
@@ -101,17 +85,11 @@ function addEmployee() {
             }
             //if the users input to the addemplyes prompt is No i am finished the function to create file will be exccuted,There is no need to make this statement = to the userres of no i am finished for this is the last possible ooptions that can be ran if the other to options are null
             else{
-                generateFile();
+                createHTML();
             }
         });
 }
-// 8.
-// add engineer function
-// - prompt user with questions for engineer name, id, email, and github name
-// - in .then callback create engineer object by instantiating Engineer class instance passing name, id, email, and github as arguments to class constructor
-// - push engineer object to employee member array
-// - push engineer id to employee id array
-// - make call to create team function
+
 function engineerPrompt(){
     inquirer.prompt([
         {
